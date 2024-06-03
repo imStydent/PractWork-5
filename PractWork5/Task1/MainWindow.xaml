@@ -1,0 +1,35 @@
+﻿<Window x:Class="Task1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ControlTemplate TargetType="RadioButton" x:Key="rbTemplate">
+            <Border CornerRadius="25" BorderThickness="2">
+                <ContentControl x:Name="radioButtonContentTemplate" Background="{TemplateBinding Background}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                Content="{TemplateBinding Content}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="radioButtonContentTemplate" Property="Background" Value="Red"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter TargetName="radioButtonContentTemplate" Property="Background" Value="Red"/>
+                    <Setter TargetName="radioButtonContentTemplate" Property="Foreground" Value="Blue"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <ListBox>
+            <RadioButton Name="rb1" Content="Кнопка1" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Aqua" Checked="RadioButton_Checked"/>
+            <RadioButton Name="rb2" Content="Кнопка2" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Aqua" Checked="RadioButton_Checked"/>
+            <RadioButton Name="rb3" Content="Кнопка3" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Aqua" Checked="RadioButton_Checked"/>
+            <RadioButton Name="rb4" Content="Кнопка4" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Aqua" Checked="RadioButton_Checked"/>
+            <RadioButton Name="rb5" Content="Кнопка5" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Aqua" Checked="RadioButton_Checked"/>
+        </ListBox>
+    </Grid>
+</Window>
